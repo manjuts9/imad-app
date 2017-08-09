@@ -19,6 +19,6 @@ button.onclick = function(){
     //not done yet
   };
   //make request
-  request.open('GET', 'http://http://manjuts90.imad.hasura-app.io/counter', true);
+  request.open('GET', 'http://manjuts90.imad.hasura-app.io/counter', true);
   request.send(null);
 };
