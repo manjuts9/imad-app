@@ -57,11 +57,11 @@ app.get('/', function (req, res) {
 
 function  hash (input, salt){
     //how to create hash
-    var hashed = crypto.pbkd2Sync(input,salt,1000,500,'sha512');
+    var hashed = crypto.pbkdf2Sync(input,salt,1000,500,'sha512');
     return hashed.toString('hex');
 }
-app.get('/hash/input', function(req,res){
-   var hashedString = hash (req.params,input, 'this-is-random-string');
+app.get('/hash/:input', function(req,res){
+   var hashedString = hash (req.params.input, 'this-is-random-string');
    res.send(hashedString);
 });
 
