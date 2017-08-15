@@ -120,9 +120,9 @@ pool.query('SELECT * FROM "USER" WHERE username = $1', [username], function (err
 
 app.get('/check-login', function(req, res){
    if(req.session && req.session.outh && req.session.outh.userId){
-       req.send('you are logged in:' + req.session.outh.userId);
+       res.send('you are logged in:' + req.session.outh.userId.toString());
    } else{
-       req.send('you are not logged in');
+       res.send('you are not logged in');
    }
 });
 
